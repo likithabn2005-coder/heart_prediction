@@ -41,13 +41,15 @@ with st.form("inputs"):
     age = col1.number_input(
         "Age",
         min_value=1, max_value=120, value=25,
-        help="Your age in years. ℹ️ Source: Basic info / ID / records."
+        help="Your age in years. 
+        ℹ️ Source: Basic info / ID / records."
     )
     sex = col2.selectbox(
         "Sex",
         options=[("Male", 1), ("Female", 0)],
         format_func=lambda x: x[0],
-        help="Biological sex coded as 1=Male, 0=Female. ℹ️ Source: Basic info."
+        help="Biological sex coded as 1=Male, 0=Female. 
+        ℹ️ Source: Basic info."
     )[1]
 
     cp = col1.selectbox(
@@ -60,26 +62,30 @@ with st.form("inputs"):
         ],
         index=2,
         format_func=lambda x: x[0],
-        help="Clinical chest-pain category. ℹ️ Source: Doctor evaluation / symptom history."
+        help="Clinical chest-pain category.
+        ℹ️ Source: Doctor evaluation / symptom history."
     )[1]
 
     trestbps = col2.number_input(
         "Resting Blood Pressure (trestbps, mmHg)",
         min_value=60, max_value=250, value=120,
-        help="Resting systolic BP measured in mmHg. ℹ️ Source: Blood pressure monitor."
+        help="Resting systolic BP measured in mmHg.
+        ℹ️ Source: Blood pressure monitor."
     )
 
     chol = col1.number_input(
         "Cholesterol (chol, mg/dL)",
         min_value=80, max_value=700, value=200,
-        help="Total serum cholesterol. ℹ️ Source: Blood test (lipid profile)."
+        help="Total serum cholesterol.
+        ℹ️ Source: Blood test (lipid profile)."
     )
 
     fbs = col2.selectbox(
         "Fasting Blood Sugar > 120 mg/dL (fbs)",
         options=[("No (0)", 0), ("Yes (1)", 1)],
         format_func=lambda x: x[0],
-        help="High fasting blood sugar flag. ℹ️ Source: Blood test (fasting glucose)."
+        help="High fasting blood sugar flag.
+        ℹ️ Source: Blood test (fasting glucose)."
     )[1]
 
     restecg = col1.selectbox(
@@ -91,26 +97,30 @@ with st.form("inputs"):
         ],
         index=1,
         format_func=lambda x: x[0],
-        help="Resting electrocardiogram result. ℹ️ Source: Resting ECG."
+        help="Resting electrocardiogram result.
+        ℹ️ Source: Resting ECG."
     )[1]
 
     thalach = col2.number_input(
         "Max Heart Rate (thalach)",
         min_value=60, max_value=240, value=150,
-        help="Maximum heart rate achieved during exercise. ℹ️ Source: Treadmill stress test / exercise ECG."
+        help="Maximum heart rate achieved during exercise.
+        ℹ️ Source: Treadmill stress test / exercise ECG."
     )
 
     exang = col1.selectbox(
         "Exercise-Induced Angina (exang)",
         options=[("No (0)", 0), ("Yes (1)", 1)],
         format_func=lambda x: x[0],
-        help="Angina triggered by exercise. ℹ️ Source: Treadmill stress test."
+        help="Angina triggered by exercise.
+        ℹ️ Source: Treadmill stress test."
     )[1]
 
     oldpeak = col2.number_input(
         "ST Depression (oldpeak)",
         min_value=0.0, max_value=10.0, value=1.0, step=0.1,
-        help="ST depression induced by exercise relative to rest. ℹ️ Source: Exercise ECG report."
+        help="ST depression induced by exercise relative to rest.
+        ℹ️ Source: Exercise ECG report."
     )
 
     slope = col1.selectbox(
@@ -118,13 +128,15 @@ with st.form("inputs"):
         options=[("0 – Upsloping", 0), ("1 – Flat", 1), ("2 – Downsloping", 2)],
         index=1,
         format_func=lambda x: x[0],
-        help="Slope of the peak exercise ST segment. ℹ️ Source: Exercise ECG."
+        help="Slope of the peak exercise ST segment. 
+        ℹ️ Source: Exercise ECG."
     )[1]
 
     ca = col2.number_input(
         "Major Vessels Colored by Fluoroscopy (ca)",
         min_value=0, max_value=3, value=0,
-        help="Number of major vessels (0–3) seen in angiography. ℹ️ Source: Coronary angiogram."
+        help="Number of major vessels (0–3) seen in angiography. 
+        ℹ️ Source: Coronary angiogram."
     )
 
     thal = col1.selectbox(
@@ -132,7 +144,8 @@ with st.form("inputs"):
         options=[("0 – Normal", 0), ("1 – Fixed defect", 1), ("2 – Reversible defect", 2), ("3 – Other", 3)],
         index=2,
         format_func=lambda x: x[0],
-        help="Thallium stress test result (per UCI dataset coding). ℹ️ Source: Nuclear stress test."
+        help="Thallium stress test result (per UCI dataset coding).
+        ℹ️ Source: Nuclear stress test."
     )[1]
 
     st.markdown(
@@ -182,3 +195,4 @@ if submitted:
         """)
 
 st.caption("⚠️ This tool is for educational use and is **not** a medical diagnosis. Please consult a doctor for clinical decisions.")
+
